@@ -63,7 +63,8 @@ gc = gspread.authorize(creds)
 worksheet = gc.open('Deep-1').sheet1
 rows = worksheet.get_all_values()
 df = pd.DataFrame(rows[1:], columns=rows[0])
-
+```
+```py
 # Data Visualisation
 df=df.astype({'Input':'float'})
 df=df.astype({'Output':'float'})
@@ -87,7 +88,8 @@ ai_brain=Sequential([
 ])
 ai_brain.compile(optimizer = 'rmsprop', loss = 'mse')
 ai_brain.fit(X_train1,y_train,epochs = 2500)
-
+```
+```py
 # Loss Calculation
 loss_df = pd.DataFrame(ai_brain.history.history)
 loss_df.plot()
