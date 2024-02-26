@@ -76,7 +76,8 @@ X_train,X_test,y_train,y_test = train_test_split(x,y,test_size = 0.33,random_sta
 Scaler = MinMaxScaler()
 Scaler.fit(X_train)
 X_train1 = Scaler.transform(X_train)
-
+```
+```py
 # Building and compiling the model
 ai_brain=Sequential([
     Dense(units=7,input_shape=[1]),
